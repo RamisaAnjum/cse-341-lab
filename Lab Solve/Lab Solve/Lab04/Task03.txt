@@ -1,0 +1,20 @@
+MOV AX,2
+CMP AX,0 
+
+JL Negative
+JE Zero 
+JG Positive
+
+Negative:
+MOV BX,-1
+JMP endif
+
+Zero:
+MOV BX,0
+JMP endif  
+
+Positive:
+MOV BX,1
+JMP endif
+
+endif:

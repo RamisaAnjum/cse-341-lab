@@ -1,0 +1,37 @@
+x db "Input$"
+y db "Vowel$" 
+z db "Consonant$"
+
+
+LEA DX,x
+MOV AH,9
+INT 21h
+
+MOV AH,1
+INT 21H
+CMP AL,'A'
+JE Vowel
+CMP AL,'E'
+JE Vowel
+CMP AL,'I'
+JE Vowel
+CMP AL,'O'
+JE Vowel
+CMP AL,'U'
+JE Vowel
+JMP Con
+
+Vowel: 
+LEA DX,y
+MOV AH,9
+INT 21h
+JMP endif 
+
+Con:
+LEA DX,z
+MOV AH,9
+INT 21h
+JMP endif
+ 
+
+endif:

@@ -1,0 +1,24 @@
+x db "Even$"
+y db "Odd$"
+
+MOV Ax,4
+MOV Bx,2
+DIV BX
+
+CMP DX,0 
+JE Even
+JMP Odd
+
+Even: 
+LEA DX,x
+MOV AH,9
+INT 21h
+JMP endif
+
+Odd: 
+LEA DX,y
+MOV AH,9
+INT 21h
+JMP endif 
+
+endif:

@@ -1,0 +1,11 @@
+
+
+MOV AX,-3
+CMP AX,0
+JL Level
+JMP endif
+
+Level:
+MOV AX,5 
+
+endif:

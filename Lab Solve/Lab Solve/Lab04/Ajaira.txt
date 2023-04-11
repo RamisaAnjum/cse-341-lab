@@ -1,0 +1,32 @@
+x db "Insert a number$"
+y db "Even$"
+z db "Odd$"
+
+LEA DX,x
+MOV AH,9
+INT 21H
+
+MOV AH,1
+INT 21H
+
+
+MOV BX,2
+DIV BX 
+CMP AH,0
+
+JE Even
+
+LEA CX,z
+MOV AH,2
+INT 21H
+JMP endif
+
+Even:
+LEA BX,y
+MOV AH,2
+INT 21h
+JMP endif 
+
+
+
+endif:
